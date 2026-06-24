@@ -1,0 +1,16 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-brand-primary: #1B6B3A;
+  --color-brand-secondary: #F5A623;
+  --color-brand-accent: #E8F5EE;
+  --color-brand-dark: #1A1A2E;
+  --color-brand-muted: #6B7280;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
