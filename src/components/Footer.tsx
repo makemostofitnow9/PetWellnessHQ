@@ -33,7 +33,7 @@ export default function Footer() {
             <h3 className="text-white font-semibold mb-4">Legal</h3>
             <ul className="space-y-2 text-sm">
               <li><Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
-              <li><Link href="/affiliate-disclosure" className="hover:text-white transition-colors">Affiliate Disclosure</Link></li>
+
               <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
               <li><Link href="/sitemap" className="hover:text-white transition-colors">Sitemap</Link></li>
             </ul>
@@ -42,7 +42,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-700 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
           <p>© {new Date().getFullYear()} PetWellnessHQ. All rights reserved.</p>
-          <p className="text-xs">PetWellnessHQ is a participant in the Amazon Services LLC Associates Program. <Link href="/affiliate-disclosure" className="underline hover:text-white">Learn more.</Link></p>
+          <p className="text-xs">Expert guides for dog and cat owners, updated regularly.</p>
         </div>
       </div>
     </footer>

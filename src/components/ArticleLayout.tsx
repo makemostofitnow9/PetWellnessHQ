@@ -3,7 +3,6 @@ import Image from 'next/image';
 import { Calendar, Clock, User, RefreshCw } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
 import Breadcrumb from './Breadcrumb';
-import AffiliateCTA from './AffiliateCTA';
 import AdPlaceholder from './AdPlaceholder';
 import RelatedArticles from './RelatedArticles';
 import { ArticleFrontmatter, Article } from '@/lib/mdx';
@@ -143,13 +142,11 @@ export default function ArticleLayout({ frontmatter, readingTime, relatedArticle
       </div>
 
       {/* Affiliate Disclosure */}
-      {frontmatter.affiliateDisclosure && (
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-xs text-gray-400 italic py-3 border-b border-gray-100">
-            This article contains affiliate links. We may earn a commission at no cost to you. <a href="/affiliate-disclosure" className="underline hover:text-brand-primary">Learn more.</a>
-          </p>
-        </div>
-      )}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p className="text-xs text-gray-400 italic py-3 border-b border-gray-100">
+          This site may earn commissions from qualifying purchases. <a href="/affiliate-disclosure" className="underline hover:text-brand-primary">Learn more.</a>
+        </p>
+      </div>
 
       {/* Ad: After intro */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
