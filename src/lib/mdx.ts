@@ -20,6 +20,7 @@ export interface ArticleFrontmatter {
   wordCount?: number;
   affiliateDisclosure?: boolean;
   schema?: string;
+  subcategory?: string;
 }
 
 export interface Article {

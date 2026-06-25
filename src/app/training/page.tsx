@@ -1,5 +1,5 @@
 import { getArticlesByCategory } from '@/lib/mdx';
-import ArticleCard from '@/components/ArticleCard';
+import CategoryFilter from '@/components/CategoryFilter';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -24,15 +24,7 @@ export default function TrainingPage() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {articles.length === 0 ? (
-          <p className="text-gray-500">No articles yet. Check back soon!</p>
-        ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {articles.map(article => (
-              <ArticleCard key={article.frontmatter.slug} frontmatter={article.frontmatter} readingTime={article.readingTime} />
-            ))}
-          </div>
-        )}
+        <CategoryFilter articles={articles} subcategories={['Behavior']} />
       </div>
     </main>
   );
