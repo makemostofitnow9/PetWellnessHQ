@@ -1,4 +1,4 @@
-import Link from 'next/link';
+﻿import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
 
 interface BreadcrumbItem {
@@ -13,8 +13,8 @@ export default function Breadcrumb({ items }: { items: BreadcrumbItem[] }) {
     itemListElement: items.map((item, i) => ({
       '@type': 'ListItem',
       position: i + 1,
-      name: item.label,
-      ...(item.href && { item: `https://pawguidehq.com${item.href}` }),
+      name: item.label.charAt(0).toUpperCase() + item.label.slice(1),
+      ...(item.href && { item: `https://PetWellnessHQ.com${item.href}` }),
     })),
   };
 

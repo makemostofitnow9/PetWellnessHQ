@@ -1,4 +1,4 @@
-import Link from 'next/link';
+﻿import Link from 'next/link';
 
 export default function Footer() {
   return (
@@ -14,7 +14,7 @@ export default function Footer() {
                 <ellipse cx="6" cy="20" rx="2.5" ry="3.5" fill="#1B6B3A"/>
                 <ellipse cx="26" cy="20" rx="2.5" ry="3.5" fill="#1B6B3A"/>
               </svg>
-              <span className="text-white text-lg font-bold">PawGuideHQ</span>
+              <span className="text-white text-lg font-bold">PetWellnessHQ</span>
             </div>
             <p className="text-sm leading-relaxed max-w-xs">The honest guide for dog and cat owners. Breed guides, training tips, and expert advice without the fluff.</p>
           </div>
@@ -41,8 +41,8 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-700 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
-          <p>© {new Date().getFullYear()} PawGuideHQ. All rights reserved.</p>
-          <p className="text-xs">PawGuideHQ is a participant in the Amazon Services LLC Associates Program. <Link href="/affiliate-disclosure" className="underline hover:text-white">Learn more.</Link></p>
+          <p>© {new Date().getFullYear()} PetWellnessHQ. All rights reserved.</p>
+          <p className="text-xs">PetWellnessHQ is a participant in the Amazon Services LLC Associates Program. <Link href="/affiliate-disclosure" className="underline hover:text-white">Learn more.</Link></p>
         </div>
       </div>
     </footer>

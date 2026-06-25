@@ -1,8 +1,8 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Affiliate Disclosure',
-  description: 'PawGuideHQ affiliate disclosure — our relationship with Amazon, Chewy, and other partners.',
+  description: 'PetWellnessHQ affiliate disclosure — our relationship with Amazon, Chewy, and other partners.',
 };
 
 export default function AffiliateDisclosurePage() {
@@ -11,7 +11,7 @@ export default function AffiliateDisclosurePage() {
       <h1 className="text-4xl font-bold text-brand-dark mb-2">Affiliate Disclosure</h1>
       <p className="text-gray-500 text-sm mb-8">Last updated: June 2025</p>
       <div className="prose prose-lg prose-headings:text-brand-dark prose-a:text-brand-primary">
-        <p>PawGuideHQ participates in affiliate marketing programs. This means that when you click on certain product links on this site and make a purchase, we may receive a small commission — at no additional cost to you.</p>
+        <p>PetWellnessHQ participates in affiliate marketing programs. This means that when you click on certain product links on this site and make a purchase, we may receive a small commission — at no additional cost to you.</p>
         <h2>Programs We Participate In</h2>
         <ul>
           <li><strong>Amazon Associates</strong> — We earn from qualifying purchases as part of the Amazon Services LLC Associates Program.</li>

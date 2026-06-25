@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import Image from 'next/image';
 import { Calendar, Clock, User, RefreshCw } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
@@ -105,8 +105,8 @@ export default function ArticleLayout({ frontmatter, readingTime, relatedArticle
     image: imageUrl,
     publisher: {
       '@type': 'Organization',
-      name: 'PawGuideHQ',
-      logo: { '@type': 'ImageObject', url: 'https://pawguidehq.com/logo.png' },
+      name: 'PetWellnessHQ',
+      logo: { '@type': 'ImageObject', url: 'https://PetWellnessHQ.com/logo.png' },
     },
   };
 

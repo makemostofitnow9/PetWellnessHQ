@@ -1,0 +1,10 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#1B6B3A"/>
+  <text x="600" y="280" font-family="Arial,sans-serif" font-size="72" font-weight="bold" fill="white" text-anchor="middle">PawGuideHQ</text>
+  <text x="600" y="370" font-family="Arial,sans-serif" font-size="32" fill="#E8F5EE" text-anchor="middle">The Honest Guide for Dog &amp; Cat Owners</text>
+  <ellipse cx="600" cy="490" rx="40" ry="35" fill="white" opacity="0.3"/>
+  <ellipse cx="555" cy="460" rx="17" ry="22" fill="white" opacity="0.3"/>
+  <ellipse cx="645" cy="460" rx="17" ry="22" fill="white" opacity="0.3"/>
+  <ellipse cx="530" cy="478" rx="12" ry="17" fill="white" opacity="0.3"/>
+  <ellipse cx="670" cy="478" rx="12" ry="17" fill="white" opacity="0.3"/>
+</svg>

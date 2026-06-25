@@ -19,7 +19,7 @@ export default function Header() {
               <ellipse cx="6" cy="20" rx="2.5" ry="3.5" fill="#1B6B3A"/>
               <ellipse cx="26" cy="20" rx="2.5" ry="3.5" fill="#1B6B3A"/>
             </svg>
-            <span className="text-xl font-bold text-brand-dark">PawGuide<span className="text-brand-primary">HQ</span></span>
+            <span className="text-xl font-bold text-brand-dark">PetWellness<span className="text-brand-primary">HQ</span></span>
           </Link>
 
           {/* Desktop Nav */}

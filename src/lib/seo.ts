@@ -1,9 +1,9 @@
-export const defaultSEO = {
-  siteName: 'PawGuideHQ',
-  siteUrl: 'https://pawguidehq.com',
-  defaultTitle: 'PawGuideHQ — The Honest Guide for Dog & Cat Owners',
+﻿export const defaultSEO = {
+  siteName: 'PetWellnessHQ',
+  siteUrl: 'https://petwellnesshq.com',
+  defaultTitle: 'PetWellnessHQ — The Honest Guide for Dog & Cat Owners',
   defaultDescription: 'Expert breed guides, training tips, and honest product reviews for dog and cat owners. Find the right breed, solve behavior problems, and keep your pet healthy.',
-  twitterHandle: '@pawguidehq',
+  twitterHandle: '@petwellnesshq',
   ogImage: '/og-default.png',
 }
 
@@ -24,7 +24,8 @@ export function generateMetadata({
   publishedAt?: string;
   updatedAt?: string;
 }) {
-  const pageTitle = title ? `${title} | ${defaultSEO.siteName}` : defaultSEO.defaultTitle;
+  // Return just the title — the layout template appends "| PetWellnessHQ" automatically
+  const pageTitle = title ?? defaultSEO.defaultTitle;
   const pageDesc = description || defaultSEO.defaultDescription;
   const pageUrl = slug ? `${defaultSEO.siteUrl}/${category}/${slug}` : defaultSEO.siteUrl;
   const pageImage = image || defaultSEO.ogImage;
@@ -39,7 +40,7 @@ export function generateMetadata({
       description: pageDesc,
       url: pageUrl,
       siteName: defaultSEO.siteName,
-      images: [{ url: pageImage, width: 1200, height: 630 }],
+      images: [{ url: pageImage, width: 1200, height: 630, alt: pageTitle }],
       type: 'article',
       ...(publishedAt && { publishedTime: publishedAt }),
       ...(updatedAt && { modifiedTime: updatedAt }),

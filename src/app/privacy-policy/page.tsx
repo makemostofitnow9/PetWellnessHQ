@@ -1,8 +1,8 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
-  description: 'PawGuideHQ privacy policy — how we collect, use, and protect your information.',
+  description: 'PetWellnessHQ privacy policy — how we collect, use, and protect your information.',
   robots: { index: false },
 };
 
@@ -13,7 +13,7 @@ export default function PrivacyPolicyPage() {
       <p className="text-gray-500 text-sm mb-8">Last updated: June 2025</p>
       <div className="prose prose-lg prose-headings:text-brand-dark">
         <h2>Information We Collect</h2>
-        <p>PawGuideHQ collects information you provide directly (such as via our contact form) and information collected automatically when you visit our site, including your IP address, browser type, pages visited, and time spent on pages, through cookies and analytics tools including Google Analytics 4.</p>
+        <p>PetWellnessHQ collects information you provide directly (such as via our contact form) and information collected automatically when you visit our site, including your IP address, browser type, pages visited, and time spent on pages, through cookies and analytics tools including Google Analytics 4.</p>
         <h2>How We Use Your Information</h2>
         <ul>
           <li>To respond to contact form submissions</li>
@@ -26,7 +26,7 @@ export default function PrivacyPolicyPage() {
         <h2>Third-Party Services</h2>
         <p>We use the following third-party services that may collect data: Google Analytics, Google AdSense, Amazon Associates. Each has its own privacy policy governing data use.</p>
         <h2>Affiliate Links</h2>
-        <p>PawGuideHQ participates in affiliate programs. When you click an affiliate link and make a purchase, we may earn a commission. We do not share your purchase data.</p>
+        <p>PetWellnessHQ participates in affiliate programs. When you click an affiliate link and make a purchase, we may earn a commission. We do not share your purchase data.</p>
         <h2>Data Retention</h2>
         <p>Contact form data is retained for up to 12 months. Analytics data is retained per Google Analytics default settings (26 months).</p>
         <h2>Your Rights</h2>
