@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     creator: defaultSEO.twitterHandle,
   },
   robots: { index: true, follow: true },
+  verification: { google: 'uqY5VsIItPhBh8FODFyhe7DbEI8KCW0ZMkoK3UvaCG4' },
 };
 
 const websiteSchema = {
