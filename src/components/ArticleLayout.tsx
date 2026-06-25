@@ -105,13 +105,39 @@ export default function ArticleLayout({ frontmatter, readingTime, relatedArticle
     publisher: {
       '@type': 'Organization',
       name: 'PetWellnessHQ',
-      logo: { '@type': 'ImageObject', url: 'https://PetWellnessHQ.com/logo.png' },
+      logo: { '@type': 'ImageObject', url: 'https://petwellnesshq.com/logo.png' },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://petwellnesshq.com/${frontmatter.category}/${frontmatter.slug}`,
     },
   };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://petwellnesshq.com' },
+      { '@type': 'ListItem', position: 2, name: frontmatter.category.charAt(0).toUpperCase() + frontmatter.category.slice(1), item: `https://petwellnesshq.com/${frontmatter.category}` },
+      { '@type': 'ListItem', position: 3, name: frontmatter.title, item: `https://petwellnesshq.com/${frontmatter.category}/${frontmatter.slug}` },
+    ],
+  };
+
+  const faqSchema = frontmatter.faqs?.length ? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: frontmatter.faqs.map(({ q, a }) => ({
+      '@type': 'Question',
+      name: q,
+      acceptedAnswer: { '@type': 'Answer', text: a },
+    })),
+  } : null;
 
   return (
     <main>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      {faqSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />}
 
       {/* Hero */}
       <div className="bg-white border-b border-gray-100">
@@ -161,6 +187,42 @@ export default function ArticleLayout({ frontmatter, readingTime, relatedArticle
             {children}
           </article>
           {/* Desktop TOC sidebar is rendered inside children context — we pass a placeholder */}
+        </div>
+      </div>
+
+      {/* FAQ Section */}
+      {frontmatter.faqs?.length ? (
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+          <h2 className="text-2xl font-bold text-brand-dark mb-6">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            {frontmatter.faqs.map(({ q, a }, i) => (
+              <details key={i} className="group border border-gray-200 rounded-xl overflow-hidden">
+                <summary className="flex items-center justify-between px-5 py-4 cursor-pointer font-semibold text-brand-dark hover:bg-brand-accent transition-colors list-none">
+                  {q}
+                  <span className="ml-4 text-brand-primary text-lg group-open:rotate-45 transition-transform duration-200 flex-shrink-0">+</span>
+                </summary>
+                <div className="px-5 py-4 text-gray-600 leading-relaxed border-t border-gray-100 bg-gray-50">
+                  {a}
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      ) : null}
+
+      {/* Author Bio */}
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+        <div className="flex items-start gap-4 bg-brand-accent border border-green-100 rounded-2xl p-6">
+          <div className="w-14 h-14 rounded-full bg-brand-primary flex items-center justify-center text-white text-xl font-bold flex-shrink-0">
+            🐾
+          </div>
+          <div>
+            <p className="font-bold text-brand-dark">{frontmatter.author}</p>
+            <p className="text-sm text-gray-500 mt-0.5">PetWellnessHQ Editorial Team</p>
+            <p className="text-sm text-gray-600 mt-2 leading-relaxed">
+              Our editorial team consists of experienced pet owners, animal behavior enthusiasts, and researchers who fact-check every article against current veterinary guidelines. We update our content regularly to reflect the latest science on pet health and behavior.
+            </p>
+          </div>
         </div>
       </div>
 

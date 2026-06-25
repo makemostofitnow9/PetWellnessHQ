@@ -21,6 +21,7 @@ export interface ArticleFrontmatter {
   affiliateDisclosure?: boolean;
   schema?: string;
   subcategory?: string;
+  faqs?: { q: string; a: string }[];
 }
 
 export interface Article {

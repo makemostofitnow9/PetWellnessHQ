@@ -3,8 +3,8 @@ import CategoryFilter from '@/components/CategoryFilter';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Dog Training Guides',
-  description: 'Proven dog training techniques, behavior guides, and step-by-step training plans for owners of all experience levels.',
+  title: 'Dog Training Guides: Behavior, Commands & Techniques | PetWellnessHQ',
+  description: 'Proven dog training techniques, step-by-step behavior guides, and expert training plans for puppies and adult dogs of all experience levels.',
 };
 
 export default function TrainingPage() {

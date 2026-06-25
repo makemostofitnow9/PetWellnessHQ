@@ -3,8 +3,8 @@ import CategoryFilter from '@/components/CategoryFilter';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Dog Breeds & Care Guides',
-  description: 'Comprehensive dog breed guides, health tips, puppy training advice, and expert care information for every dog owner.',
+  title: 'Dog Breeds, Health & Training Guides | PetWellnessHQ',
+  description: 'Expert dog breed guides, puppy training tips, health advice, and care information for every dog owner — from new puppies to senior dogs.',
 };
 
 const SUBCATEGORIES = ['New Pet', 'Costs', 'Health', 'Behavior', 'Breeds', 'Grooming'];

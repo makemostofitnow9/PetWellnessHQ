@@ -108,7 +108,7 @@ export default function HomePage() {
       <section className="bg-brand-primary text-white py-8 px-4">
         <div className="max-w-4xl mx-auto grid grid-cols-3 gap-6 text-center">
           {[
-            { value: '15+', label: 'Expert Articles' },
+            { value: `${allArticles.length}+`, label: 'Expert Articles' },
             { value: '3', label: 'Pet Categories' },
             { value: '100%', label: 'Free to Read' },
           ].map(stat => (

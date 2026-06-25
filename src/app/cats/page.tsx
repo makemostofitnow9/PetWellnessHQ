@@ -3,8 +3,8 @@ import CategoryFilter from '@/components/CategoryFilter';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Cat Breeds & Care Guides',
-  description: 'In-depth cat breed guides, feline behavior tips, and expert care advice for cat owners.',
+  title: 'Cat Breeds, Health & Behavior Guides | PetWellnessHQ',
+  description: 'In-depth cat breed guides, feline behavior tips, health advice, and expert care for every cat owner — from kittens to senior cats.',
 };
 
 const SUBCATEGORIES = ['New Pet', 'Health', 'Behavior', 'Breeds'];
