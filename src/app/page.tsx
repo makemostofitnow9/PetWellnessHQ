@@ -54,54 +54,40 @@ export default function HomePage() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative bg-gradient-to-br from-brand-primary via-green-700 to-green-900 text-white overflow-hidden">
-        {/* Background paw pattern */}
-        <div className="absolute inset-0 opacity-[0.04]">
-          {[...Array(30)].map((_, i) => (
-            <svg key={i} className="absolute" style={{ left: `${(i * 13 + 5) % 100}%`, top: `${(i * 19 + 3) % 100}%`, width: 48, height: 48, transform: `rotate(${i * 37}deg)` }} viewBox="0 0 32 32" fill="white">
-              <ellipse cx="16" cy="22" rx="8" ry="7"/><ellipse cx="9" cy="13" rx="3.5" ry="4.5"/><ellipse cx="23" cy="13" rx="3.5" ry="4.5"/><ellipse cx="6" cy="20" rx="2.5" ry="3.5"/><ellipse cx="26" cy="20" rx="2.5" ry="3.5"/>
-            </svg>
-          ))}
-        </div>
+      <section className="relative text-white overflow-hidden">
+        {/* Background field photo */}
+        <Image
+          src="https://images.unsplash.com/photo-1670262257345-548986b7b8ed?auto=format&fit=crop&w=1600&h=800&q=80"
+          alt="Golden retriever running on a sunny green field"
+          fill
+          className="object-cover object-center"
+          sizes="100vw"
+          priority
+        />
+        {/* Dark overlay so text stays readable */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/45 to-green-900/60" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 relative">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left: text */}
-            <div className="text-center lg:text-left">
-              <span className="inline-block bg-white/15 border border-white/20 text-white text-sm font-medium px-4 py-1.5 rounded-full mb-6">
-                🐾 Trusted by pet owners everywhere
-              </span>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-5">
-                The Honest Guide<br />for Dog &amp; Cat<br />Owners
-              </h1>
-              <p className="text-lg sm:text-xl text-green-100 mb-8 max-w-lg mx-auto lg:mx-0">
-                Breed guides, training tips, and expert advice — without the fluff.
-              </p>
-              <div className="mb-8">
-                <SearchBar />
-              </div>
-              <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
-                <Link href="/dogs" className="inline-flex items-center gap-2 bg-white text-brand-primary font-semibold px-6 py-3 rounded-full hover:bg-green-50 transition-all hover:gap-3 shadow-lg">
-                  Explore Dog Breeds <ArrowRight size={16} />
-                </Link>
-                <Link href="/cats" className="inline-flex items-center gap-2 bg-white/10 border border-white/30 text-white font-semibold px-6 py-3 rounded-full hover:bg-white/20 transition-all hover:gap-3">
-                  Explore Cat Breeds <ArrowRight size={16} />
-                </Link>
-              </div>
+          <div className="max-w-xl text-left">
+            <span className="inline-block bg-white/15 border border-white/20 text-white text-sm font-medium px-4 py-1.5 rounded-full mb-6">
+              🐾 Trusted by pet owners everywhere
+            </span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-5">
+              The Honest Guide<br />for Dog &amp; Cat<br />Owners
+            </h1>
+            <p className="text-lg sm:text-xl text-green-100 mb-8 max-w-lg">
+              Breed guides, training tips, and expert advice — without the fluff.
+            </p>
+            <div className="mb-8">
+              <SearchBar />
             </div>
-
-            {/* Right: photo collage */}
-            <div className="hidden lg:grid grid-cols-2 gap-3">
-              {[
-                { src: 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=400&h=300', alt: 'Golden retriever puppy', tall: true },
-                { src: 'https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=400&h=250', alt: 'Fluffy cat' },
-                { src: 'https://images.unsplash.com/photo-1568572933382-74d440642117?auto=format&fit=crop&w=400&h=250', alt: 'Fluffy white dog' },
-                { src: 'https://images.unsplash.com/photo-1548247416-ec66f4900b2e?auto=format&fit=crop&w=400&h=300', alt: 'Large cat', tall: true },
-              ].map((photo, i) => (
-                <div key={i} className={`relative rounded-2xl overflow-hidden shadow-2xl ${i === 0 || i === 3 ? 'row-span-1' : ''}`} style={{ height: photo.tall ? '200px' : '160px' }}>
-                  <Image src={photo.src} alt={photo.alt} fill className="object-cover" sizes="200px" />
-                </div>
-              ))}
+            <div className="flex flex-wrap gap-3">
+              <Link href="/dogs" className="inline-flex items-center gap-2 bg-white text-brand-primary font-semibold px-6 py-3 rounded-full hover:bg-green-50 transition-all hover:gap-3 shadow-lg">
+                Explore Dog Breeds <ArrowRight size={16} />
+              </Link>
+              <Link href="/cats" className="inline-flex items-center gap-2 bg-white/10 border border-white/30 text-white font-semibold px-6 py-3 rounded-full hover:bg-white/20 transition-all hover:gap-3">
+                Explore Cat Breeds <ArrowRight size={16} />
+              </Link>
             </div>
           </div>
         </div>
@@ -196,6 +182,74 @@ export default function HomePage() {
           </div>
         </section>
       )}
+
+      {/* Popular Dog Breeds */}
+      <section className="bg-gray-50 py-16 px-4">
+        <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between mb-10">
+            <div>
+              <p className="text-brand-primary font-semibold text-sm uppercase tracking-wide mb-1">🐕 Dogs</p>
+              <h2 className="text-3xl font-bold text-brand-dark">Popular Dog Breeds</h2>
+            </div>
+            <Link href="/dogs?sub=Breeds" className="hidden sm:inline-flex items-center gap-2 text-brand-primary font-semibold hover:gap-3 transition-all text-sm">
+              All breeds <ArrowRight size={14} />
+            </Link>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+            {[
+              { name: 'Golden Retriever', trait: 'Friendly', img: 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=300&h=300' },
+              { name: 'French Bulldog', trait: 'Compact', img: 'https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=300&h=300' },
+              { name: 'German Shepherd', trait: 'Protective', img: 'https://images.unsplash.com/photo-1589941013453-ec89f33b5e95?auto=format&fit=crop&w=300&h=300' },
+              { name: 'Shiba Inu', trait: 'Independent', img: 'https://images.unsplash.com/photo-1546527868-ccb7ee7dfa6a?auto=format&fit=crop&w=300&h=300' },
+              { name: 'Bichon Frisé', trait: 'Hypoallergenic', img: 'https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&fit=crop&w=300&h=300' },
+              { name: 'Labrador', trait: 'Loyal', img: 'https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&w=300&h=300' },
+            ].map(breed => (
+              <Link key={breed.name} href="/dogs?sub=Breeds" className="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 aspect-square">
+                <Image src={breed.img} alt={breed.name} fill className="object-cover group-hover:scale-110 transition-transform duration-500" sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-3">
+                  <p className="text-white font-semibold text-sm leading-tight">{breed.name}</p>
+                  <span className="inline-block mt-1 text-xs bg-white/20 text-white/90 px-2 py-0.5 rounded-full">{breed.trait}</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Popular Cat Breeds */}
+      <section className="bg-white py-16 px-4">
+        <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between mb-10">
+            <div>
+              <p className="text-blue-600 font-semibold text-sm uppercase tracking-wide mb-1">🐈 Cats</p>
+              <h2 className="text-3xl font-bold text-brand-dark">Popular Cat Breeds</h2>
+            </div>
+            <Link href="/cats?sub=Breeds" className="hidden sm:inline-flex items-center gap-2 text-blue-600 font-semibold hover:gap-3 transition-all text-sm">
+              All breeds <ArrowRight size={14} />
+            </Link>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+            {[
+              { name: 'Ragdoll', trait: 'Laid-back', img: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=300&h=300' },
+              { name: 'Maine Coon', trait: 'Majestic', img: 'https://images.unsplash.com/photo-1548247416-ec66f4900b2e?auto=format&fit=crop&w=300&h=300' },
+              { name: 'Siamese', trait: 'Vocal', img: 'https://images.unsplash.com/photo-1533743983669-94fa5c4338ec?auto=format&fit=crop&w=300&h=300' },
+              { name: 'British Shorthair', trait: 'Calm', img: 'https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=300&h=300' },
+              { name: 'Calico', trait: 'Unique', img: 'https://images.unsplash.com/photo-1495360010541-f48722b34f7d?auto=format&fit=crop&w=300&h=300' },
+              { name: 'Persian', trait: 'Gentle', img: 'https://images.unsplash.com/photo-1513245543132-31f507417b26?auto=format&fit=crop&w=300&h=300' },
+            ].map(breed => (
+              <Link key={breed.name} href="/cats?sub=Breeds" className="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 aspect-square">
+                <Image src={breed.img} alt={breed.name} fill className="object-cover group-hover:scale-110 transition-transform duration-500" sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw" />
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/70 via-black/10 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-3">
+                  <p className="text-white font-semibold text-sm leading-tight">{breed.name}</p>
+                  <span className="inline-block mt-1 text-xs bg-white/20 text-white/90 px-2 py-0.5 rounded-full">{breed.trait}</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Trust Bar */}
       <section className="bg-brand-accent border-t border-green-100 py-14 px-4">
